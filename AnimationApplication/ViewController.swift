@@ -5,12 +5,13 @@
 //  Created by Глеб Бельков on 28.04.2024.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
 
     
     @IBOutlet weak var coreAnimationView: UIView!
+    @IBOutlet weak var SpringAnimationView: SpringView!
     
     private var originCoordinate: CGFloat?
     
@@ -23,6 +24,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
 
+    @IBAction func springAnimationButtonPressed(_ sender: SpringButton) {
+        SpringAnimationView.animation = "fall"
+        SpringAnimationView.curve = "easeIn"
+        SpringAnimationView.duration = 1
+        SpringAnimationView.animate()
+        
+        sender.animation = "shake"
+        sender.animate()
+    }
+    
     @IBAction func coreAnimationButtonPressed(_ sender: UIButton) {
         sender.pulsate()
         
@@ -35,4 +46,3 @@ class ViewController: UIViewController {
     }
     
 }
-

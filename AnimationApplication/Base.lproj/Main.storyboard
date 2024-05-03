@@ -47,18 +47,70 @@
                                     <action selector="coreAnimationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QQ3-5m-FUu"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SoT-tW-OTO" customClass="SpringView" customModule="Spring">
+                                <rect key="frame" x="46.666666666666657" y="296" width="300" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spring Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOJ-4X-kJt">
+                                        <rect key="frame" x="39" y="46" width="222" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="MLT-oh-1uB"/>
+                                    <constraint firstItem="pOJ-4X-kJt" firstAttribute="centerY" secondItem="SoT-tW-OTO" secondAttribute="centerY" id="NUI-MS-I5a"/>
+                                    <constraint firstAttribute="height" constant="128" id="QiP-WJ-9nP"/>
+                                    <constraint firstItem="pOJ-4X-kJt" firstAttribute="centerX" secondItem="SoT-tW-OTO" secondAttribute="centerX" id="Zyu-zz-e15"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="morph"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="force">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="delay">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="curve" value="easeOut"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXJ-PU-UQ0" customClass="SpringButton" customModule="Spring">
+                                <rect key="frame" x="46.666666666666657" y="758" width="300" height="50"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Run Spring Animaton">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="coreAnimationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VVD-WY-phO"/>
+                                    <action selector="springAnimationButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Ml-VU-E53"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SoT-tW-OTO" firstAttribute="top" secondItem="Y57-Km-ENd" secondAttribute="bottom" constant="40" id="7Fn-ww-65b"/>
                             <constraint firstItem="r8s-6b-D3X" firstAttribute="width" secondItem="Y57-Km-ENd" secondAttribute="width" id="Xga-Pm-9FV"/>
                             <constraint firstItem="Y57-Km-ENd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="Yap-wm-lFf"/>
                             <constraint firstItem="Y57-Km-ENd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aUb-Ws-a4Y"/>
                             <constraint firstItem="r8s-6b-D3X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bnD-cK-GDS"/>
+                            <constraint firstItem="WXJ-PU-UQ0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="duf-CN-a5g"/>
+                            <constraint firstItem="SoT-tW-OTO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="et8-oF-SbC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r8s-6b-D3X" secondAttribute="bottom" constant="100" id="gZs-WC-Uew"/>
+                            <constraint firstItem="SoT-tW-OTO" firstAttribute="width" secondItem="Y57-Km-ENd" secondAttribute="width" id="h6o-0U-JNL"/>
+                            <constraint firstItem="WXJ-PU-UQ0" firstAttribute="width" secondItem="r8s-6b-D3X" secondAttribute="width" id="hGG-9U-wOq"/>
+                            <constraint firstItem="WXJ-PU-UQ0" firstAttribute="top" secondItem="r8s-6b-D3X" secondAttribute="bottom" constant="40" id="xvs-ZQ-91q"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="SpringAnimationView" destination="SoT-tW-OTO" id="RKR-Le-Uaz"/>
                         <outlet property="coreAnimationView" destination="Y57-Km-ENd" id="5ud-BG-6Ai"/>
                     </connections>
                 </viewController>
@@ -76,6 +128,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
